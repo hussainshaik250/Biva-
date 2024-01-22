@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "biva-4cf2a": {
+      "hosting": {
+        "biva": [
+          "biva-4cf2a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "biva-4cf2a"
+  }
+}

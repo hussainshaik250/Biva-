@@ -1,0 +1,6 @@
+.mwl-calendar-month-view-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Adjust the number of columns as needed */
+  }
+  
+  

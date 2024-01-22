@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "biva",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

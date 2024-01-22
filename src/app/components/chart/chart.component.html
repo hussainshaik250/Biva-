@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mwl-calendar-month-view
+          [viewDate]="viewDate"
+          [events]="calendarEvents"
+          (dayClicked)="dayClicked($event)"
+          (eventClicked)="eventClicked($event)"
+        >
+          <ng-template #cellTemplate let-day="day">
+            {{ day.date | date: 'd' }}
+          </ng-template>
+        </mwl-calendar-month-view>
+      </div>
+    </div>
+  </div>

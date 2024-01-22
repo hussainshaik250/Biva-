@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <button mat-button [matMenuTriggerFor]="menu" >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu>
+      <button mat-menu-item routerLink="/dashboard">Task Dashboard</button>
+      <button mat-menu-item routerLink="/chart">Task Chart</button>
+    </mat-menu>
+    <span >Biva Assignment</span>
+    <span class="example-spacer"></span>
+   
+  </mat-toolbar>

@@ -1,0 +1,34 @@
+
+<form [formGroup]="formGroup">
+    <h4 class="mx-auto heading" style="width: 300px;">Task details</h4>
+    <div class="mx-auto" style="width: 320px;">
+    
+    <mat-form-field class="input">
+        <mat-label>Task Name</mat-label>
+        <input matInput placeholder="Task name" formControlName="taskname" required>
+        <div *ngIf="hasError('taskname', 'required')" class="error-message">Task Name is required</div>
+        <div *ngIf="hasError('taskname', 'pattern')" class="error-message">Only alphabets and spaces are allowed</div>
+      </mat-form-field> 
+      <mat-form-field class="input">
+        <mat-label>Task Description</mat-label>
+        <input matInput placeholder="Task Description" formControlName="taskdescription" required>
+        <div *ngIf="hasError('taskdescription', 'required')" class="error-message">Description is required</div>
+        <div *ngIf="hasError('taskdescription', 'pattern')" class="error-message">Only alphabets and spaces are allowed</div>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Due Date</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="duedate" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        
+        
+        <div *ngIf="formGroup.get('duedate')?.hasError('required') && (formGroup.get('duedate')?.dirty || formGroup.get('duedate')?.touched)" class="error-message">Date is required</div>
+    </mat-form-field>
+      <div class="btn-prompt">
+        <button type="button" class="btn btn-outline-success cancel-button" (click)="closeDialog()">Cancel</button>&nbsp;
+      <button type="button" class="btn btn-outline-success" (click)="onSubmit()">{{ editMode ? 'Update' : 'Submit' }}</button>
+      
+    </div>
+      </div>
+      </form>
